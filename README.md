@@ -27,5 +27,15 @@ Images can be generated based on the trained model and compared for their differ
 You can adjust the model training parameters by referring to the code in the args section of train.py and generate.py.
 
 # Details
+The first is the data set preparation, using the LMDB database to accelerate the training.
+For model construction, refer to the model structure shown in the following figure in the original text, and the recurring Suri used in Pytorch open source version 1. Using the model-dependent framework shown in the second figure below, the original model is split into EqualConv2d, EqualLinear, StyleConvBlock , Convblock and other sub-parts are implemented, and finally built into a complete StyleGenerator and Discriminator.
+
+![image](https://user-images.githubusercontent.com/74340284/150367442-deeccfa9-ed91-4878-a338-02ff227d0026.png)
+
+![image](https://user-images.githubusercontent.com/74340284/150367661-94814338-549e-4a42-889d-2ef59faca7cb.png)
+
+In the model building and training part, follow the tutorial provided by the teaching assistant on the official website to help convert the torch method to the jittor method, and explore some other means to implement it yourself. Jittor's documentation is relatively incomplete, and some methods are different from Pytorch. In this case, I use a lower-level method for implementation.
+
+For example: `jt.sqrt(out.var(0, unbiased=False) + 1e-8)` is used in the Discrimination part of the model to solve the variance of the given dimension of the tensor, and there is no corresponding var() in the Jittor framework method, so I use `((out-out.mean(0)).sqr().sum(0)+1e-8).sqrt()` to implement the same function.
 
 To be continued

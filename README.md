@@ -16,7 +16,7 @@ The MultiResolutionDataset method for reading the LMDB database is defined in da
 
 # Environment and execution instructions
 Project environment dependencies include jittor, ldbm, PIL, argparse, tqdm and some common python libraries.
-Run in the project environment terminal
-<python train.py --mixing "./mdb/color_symbol_7k_mdb">
-The model can be trained
+The model can be trained by running the following script in the terminal of the project environment
+`python train.py --mixing "./mdb/color_symbol_7k_mdb">`
+
 

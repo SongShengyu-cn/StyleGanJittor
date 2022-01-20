@@ -1,4 +1,5 @@
 # StyleGanJittor (Tsinghua university computer graphics course)
+# Overview
 Jittor 64*64 implementation of StyleGAN (Tsinghua university computer graphics course)
 This project is a repetition of StyleGAN based on python 3.8 + [计图（jittor）](https://github.com/Jittor/jittor) and [The open source StyleGAN-Pytorch project](https://github.com/rosinality/style-based-gan-pytorch). I train the model on the color_symbol_7k dataset for 40000 iterations. The model can generate 64×64 symbolic images.
 

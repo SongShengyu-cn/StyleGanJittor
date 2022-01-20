@@ -38,4 +38,13 @@ In the model building and training part, follow the tutorial provided by the tea
 
 For example: `jt.sqrt(out.var(0, unbiased=False) + 1e-8)` is used in the Discrimination part of the model to solve the variance of the given dimension of the tensor, and there is no corresponding var() in the Jittor framework method, so I use `((out-out.mean(0)).sqr().sum(0)+1e-8).sqrt()` to implement the same function.
 
+# Results
+Limited by the hardware, the model training time is long, and I don't have enough time to fine-tune various parameters, optimizers and various parameters, so the results obtained by training on Jittor are not as good as when I use the same model framework to train on Pytorch The result is good, but the progressive training process can be clearly seen from the video, and the generated symbols are gradually clear, and the results are gradually getting better.
+
+Figures below are sample results obtained by training on Jittor and Pytorch respectively. For details, please refer to the video files in the folder. The training results of the same model and code on Pytorch can be found in the sample_torch folder.
+![figures by Jittor](https://user-images.githubusercontent.com/74340284/150368276-a9e25390-9972-4e6e-83a3-c0ab06764255.png)
+![figures by Pytorch](https://user-images.githubusercontent.com/74340284/150368343-990d50a7-f5c4-46cb-9cba-5758f9c9ce98.png)
+
+
+
 To be continued

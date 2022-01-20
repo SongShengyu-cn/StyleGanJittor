@@ -18,6 +18,12 @@ The MultiResolutionDataset method for reading the LMDB database is defined in da
 Project environment dependencies include jittor, ldbm, PIL, argparse, tqdm and some common python libraries.
 The model can be trained by the script in the terminal of the project environment
 `python train.py --mixing "./mdb/color_symbol_7k_mdb"`
+
 Images can be generated based on the trained model and compared for their differences by the script
 `python generate.py --size 64 --n_row 3 --n_col 5 --path './checkpoint/040000.model'`
+
+You can adjust the model training parameters by referring to the code in the args section of train.py and generate.py.
+
+# Details
+
 
